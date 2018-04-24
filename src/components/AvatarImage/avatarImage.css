@@ -1,0 +1,44 @@
+.avatar-image {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top:0;
+    left:0;
+    border:  3px solid transparent;
+}
+
+.avatar-image-container--no-loader .avatar-image:hover{
+    border:  3px solid rgb(155, 160, 163);
+}
+
+.avatar-image-container--mask .avatar-image:hover{
+    opacity: 0.8;
+    background-color: rgb(122, 161, 178);
+}
+
+.loader {
+    border: 3px solid #3498db;
+    border-top: 3px solid #f3f3f3;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.avatar-image-container {
+    height: 66px;
+    width: 66px;
+    position: relative;
+    display: inline-block;
+}
