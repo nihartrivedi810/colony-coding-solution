@@ -21,6 +21,12 @@
     animation-name: bounceInDown;
 }
 
+.fadeOut {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.2s, opacity 0.2s linear;
+}
+
 .animated {
     animation-duration: 0.3s;
 }
@@ -28,9 +34,10 @@
 .popover {
     background: rgb(44, 48, 51);
     border-radius: 2px;
-    width: 320px;
+    width: 330px;
     position: absolute;
     padding: 10px;
+    text-align: left;
 }
 
 .popover.bottom > .arrow:after {
@@ -46,7 +53,7 @@
     margin-left: -10px;
     content: " ";
     border-top-width: 0;
-    border-bottom-color:  rgb(44, 48, 51);
+    border-bottom-color: rgb(44, 48, 51);
 }
 
 .popover > .arrow:after {
