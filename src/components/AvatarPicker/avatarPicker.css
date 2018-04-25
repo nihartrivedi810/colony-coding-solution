@@ -1,3 +1,7 @@
-.avatar-image-overlay-wrapper {
-    display: inline-block;
+.avatar-popover__container {
+    text-align: center;
+    color: rgb(249, 249, 249);
+    margin: 14px 0;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
 }

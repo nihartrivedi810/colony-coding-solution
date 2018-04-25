@@ -6,22 +6,11 @@ import _ from 'lodash';
 
 import './borderStyles.css';
 
-const getStyles = ({
-                     borderWidth,
-                     activeBorderColor,
-                     hoverBorderColor = activeBorderColor,
-                     loadingBorderColor,
-                     innerImageHeight,
-                     innerImageWidth,
-                     isLoading,
-                     isActive
-                   }) => {
-
+const getStyles = ({ borderWidth, activeBorderColor, hoverBorderColor = activeBorderColor, innerImageHeight, innerImageWidth, isLoading, isActive }) => {
   const styles = {
     height: innerImageHeight + 2 * borderWidth,
     width: innerImageWidth + 2 * borderWidth,
     borderWidth,
-    display: 'inline-block',
   };
 
   if (isActive) {
@@ -33,7 +22,7 @@ const getStyles = ({
   return styles;
 };
 
-const withAnimatedBorders = ({ borderWidth, activeBorderColor, hoverBorderColor = activeBorderColor, loadingBorderColor, innerImageHeight, innerImageWidth }) => ComposedComponent => {
+const withAnimatedBorders = ({ borderWidth, activeBorderColor, hoverBorderColor = activeBorderColor, innerImageHeight, innerImageWidth }) => ComposedComponent => {
   const WithAnimatedBorders = (props) => {
     const { isActive } = props;
     return (<div
@@ -48,7 +37,6 @@ const withAnimatedBorders = ({ borderWidth, activeBorderColor, hoverBorderColor 
           borderWidth,
           activeBorderColor,
           hoverBorderColor,
-          loadingBorderColor,
           innerImageHeight,
           innerImageWidth,
           isLoading: props.isLoading,
@@ -83,8 +71,8 @@ const withAnimatedBorders = ({ borderWidth, activeBorderColor, hoverBorderColor 
   return withStateHandlers(
     () => ({ isLoading: false }),
     {
-      onClick: ({ loading }, { showLoaderOnClick, onClick }) => () => {
-        _.isFunction(onClick) && onClick();
+      onClick: ({ loading }, { showLoaderOnClick, onClick }) => (...args) => {
+        _.isFunction(onClick) && onClick(...args);
         return { isLoading: showLoaderOnClick };
       }
     })(WithAnimatedBorders);

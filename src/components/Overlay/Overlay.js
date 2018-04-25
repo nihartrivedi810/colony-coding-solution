@@ -33,7 +33,7 @@ class Overlay extends React.PureComponent {
       delayHide: 0,
     };
 
-    return <div
+    return (<div
       ref={element => {
         this.target = element;
       }}
@@ -47,7 +47,7 @@ class Overlay extends React.PureComponent {
         {props.overlay}
       </Popover>
       </OverlayTrigger>
-    </div>
+    </div>);
   }
 }
 

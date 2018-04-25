@@ -16,6 +16,7 @@
 
 .animated-loader {
     border-radius: 50%;
+    display: inline-block;
 }
 
 .animated-loader-container:hover .animated-loader {

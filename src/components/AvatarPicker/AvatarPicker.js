@@ -46,14 +46,17 @@ class AvatarPicker extends React.Component {
   };
 
   renderOverlay = () => {
-    return this.props.avatars.map(avatar => (<AvatarListItem
-      key={avatar.id}
-      src={avatar.src}
-      onClick={() => this.onSelectAvatarImage(avatar.src)}
-      isActive={avatar.src === this.state.selectedAvatarImage}
-      showLoaderOnClick
-      showMaskOnHover
-    />));
+    return <React.Fragment>
+      <div className="avatar-popover__container">Choose your avatar</div>
+      {this.props.avatars.map(avatar => (<AvatarListItem
+        key={avatar.id}
+        src={avatar.src}
+        onClick={() => this.onSelectAvatarImage(avatar.src)}
+        isActive={avatar.src === this.state.selectedAvatarImage}
+        showLoaderOnClick
+        showMaskOnHover
+      />))}
+    </React.Fragment>;
   };
 
   render() {
