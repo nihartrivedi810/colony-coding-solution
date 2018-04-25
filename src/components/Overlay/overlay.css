@@ -49,23 +49,11 @@
     border-bottom-color: rgb(44, 48, 51);
 }
 
-.popover.bottom > .arrow:after {
-    top: 1px;
-    margin-left: -10px;
-    content: " ";
-    border-top-width: 0;
-    border-bottom-color: rgb(44, 48, 51);
-}
-
 .popover > .arrow:after {
     content: "";
     border-width: 10px;
 }
 
-.popover > .arrow:after {
-    content: "";
-    border-width: 10px;
-}
 
 .popover > .arrow, .popover > .arrow:after {
     position: absolute;
@@ -78,31 +66,11 @@
 
 .popover.bottom > .arrow {
     top: -11px;
-    left: 50%;
     margin-left: -11px;
     border-top-width: 0;
-    border-bottom-color: #999;
     border-bottom-color: rgba(0, 0, 0, .25);
-}
-
-.popover > .arrow, .popover > .arrow:after {
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
 }
 
 .popover > .arrow {
     border-width: 11px;
-}
-
-.popover > .arrow, .popover > .arrow:after {
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
 }
